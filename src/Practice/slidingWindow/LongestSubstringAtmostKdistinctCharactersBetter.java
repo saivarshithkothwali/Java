@@ -29,7 +29,8 @@ public class LongestSubstringAtmostKdistinctCharacters
                     l++;
                 }
             }
-            else {
+            else
+            {
                 maxLen = Math.max(maxLen, r - l + 1);
             }
 

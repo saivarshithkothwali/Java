@@ -13,17 +13,21 @@ public class maxSumKelements
     public static int max(int[] arr,int k)
     {
         int maxSum=0;
-        for(int i=0;i<arr.length;i++)
+        for(int i=0;i<k;i++)
         {
-            int sum=0;
-            for(int j=i;j<arr.length;j++)
-            {
-                sum=sum+arr[j];
-                if((j-i+1)==k)
-                {
-                    maxSum=Math.max(maxSum,sum);
-                }
-            }
+            maxSum=maxSum+arr[i];
+        }
+        int l=0;
+        int r=k-1;
+        int sum=maxSum;
+        while(r<arr.length-1)
+        {
+            sum=sum-arr[l];
+            l++;
+            r++;
+            sum=sum+arr[r];
+
+            maxSum=Math.max(maxSum,sum);
         }
         return maxSum;
     }
