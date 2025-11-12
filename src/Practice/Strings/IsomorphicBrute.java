@@ -1,6 +1,6 @@
 package Practice.Strings;
 import java.util.HashMap;
-public class Isomorphic
+public class IsomorphicBrute
 {
     public static void main(String[] args)
     {

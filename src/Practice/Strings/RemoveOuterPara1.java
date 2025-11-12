@@ -2,7 +2,8 @@ package Practice.Strings;
 
 public class RemoveOuterPara1
 {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         System.out.println(remove("((()))"));
     }
     public static String remove(String str)
@@ -14,26 +15,23 @@ public class RemoveOuterPara1
             char ch=str.charAt(i);
             if(ch=='(')
             {
-                if(count==0)
+                if(count!=0)
                 {
+                    sb.append(ch);
                     count++;
                 }
                 else
                 {
-                    sb.append(ch);
                     count++;
                 }
             }
             else
             {
                 count--;
-                if(count==0)
+                if(count!=0)
                 {
-                    continue;
-                }
-                else {
                     sb.append(ch);
-
+                    count--;
                 }
             }
         }

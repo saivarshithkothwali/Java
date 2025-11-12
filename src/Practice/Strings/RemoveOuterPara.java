@@ -5,41 +5,46 @@ public class RemoveOuterPara
 {
     public static void main(String[] args)
     {
-        System.out.println(remove("((()))(())"));
+        String str="((()))(())";
+        System.out.println(remove(str));
     }
     public static String remove(String str)
     {
-        StringBuilder sb=new StringBuilder();
         Stack<Character> st=new Stack<>();
+        //String ans="";
+        StringBuilder sb=new StringBuilder();
 
         for(int i=0;i<str.length();i++)
         {
             char ch=str.charAt(i);
+
             if(ch=='(')
             {
-                if(!st.isEmpty())
+                if(st.isEmpty())
                 {
                     st.push(ch);
-                    sb.append(ch);
                 }
                 else
                 {
                     st.push(ch);
+                    sb.append(ch);
                 }
             }
             else
             {
                 st.pop();
-                if(!st.isEmpty())
+                if(st.isEmpty())
                 {
-                    sb.append(ch);
+                    continue;
                 }
                 else
                 {
-                    continue;
+                    sb.append(ch);
                 }
             }
         }
         return sb.toString();
+
+
     }
 }

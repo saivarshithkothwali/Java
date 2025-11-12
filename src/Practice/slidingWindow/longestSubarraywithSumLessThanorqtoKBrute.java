@@ -2,7 +2,7 @@ package Practice.slidingWindow;
 
 import java.util.Scanner;
 
-public class longestSubarraywithSumLessThanorqtoK
+public class longestSubarraywithSumLessThanorqtoKBrute
 {
     public static void main(String[] args)
     {
@@ -24,7 +24,7 @@ public class longestSubarraywithSumLessThanorqtoK
     }
     public static int longest(int[] arr,int k)
     {
-        int maxLen=0;
+        int length=0;
         for(int i=0;i<arr.length;i++)
         {
             int sum=0;
@@ -33,13 +33,12 @@ public class longestSubarraywithSumLessThanorqtoK
                 sum=sum+arr[j];
                 if(sum<=k)
                 {
-                    maxLen=Math.max(maxLen,j-i+1);
+                    length=Math.max(length,j-i+1);
                 }
                 else
                     break;
             }
-
         }
-        return maxLen;
+        return length;
     }
 }

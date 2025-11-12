@@ -1,7 +1,7 @@
 package Practice.slidingWindow;
 
 
-public class maxSumKelements
+public class maxSumKelementsOptimal1
 {
     public static void main(String[] args)
     {
@@ -12,22 +12,24 @@ public class maxSumKelements
     }
     public static int max(int[] arr,int k)
     {
-        int maxSum=0;
+        int sum=0;
         for(int i=0;i<k;i++)
         {
-            maxSum=maxSum+arr[i];
+            sum=sum+arr[i];
         }
+
+        int maxSum=sum;
         int l=0;
         int r=k-1;
-        int sum=maxSum;
-        while(r<arr.length-1)
+
+        while(r<=arr.length-2)
         {
             sum=sum-arr[l];
             l++;
             r++;
             sum=sum+arr[r];
 
-            maxSum=Math.max(maxSum,sum);
+            maxSum=Math.max(sum,maxSum);
         }
         return maxSum;
     }

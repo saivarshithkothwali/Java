@@ -8,9 +8,9 @@ public class longestSubarraywithSumLessThanorqtoKBetter
     }
     public static int longest(int[] arr,int k)
     {
+        int l=0,r=0;
         int sum=0;
         int maxLen=0;
-        int l=0,r=0;
         while(r<arr.length)
         {
             sum=sum+arr[r];

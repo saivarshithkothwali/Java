@@ -2,13 +2,16 @@ package Practice.Strings;
 
 public class ReverseWords1
 {
-    public static void main(String[] args) {
-        System.out.println(reverse("Hello Coder"));
+    public static void main(String[] args)
+    {
+
+        System.out.println(reverse("   Hello  Coder "));
     }
     public static String reverse(String str)
     {
-        StringBuilder sb=new StringBuilder();
         int startIndex=str.length()-1;
+
+        StringBuilder sb=new StringBuilder();
 
         while(startIndex>=0)
         {
@@ -16,16 +19,20 @@ public class ReverseWords1
             {
                 startIndex--;
             }
+
             if(startIndex<0)
             {
                 break;
             }
             int endIndex=startIndex;
+
+
             while(startIndex>=0 && str.charAt(startIndex)!=' ')
             {
                 startIndex--;
             }
-            if(sb.length()==0)
+
+            if(sb.isEmpty())
             {
                 sb.append(str.substring(startIndex+1,endIndex+1));
             }
@@ -34,8 +41,6 @@ public class ReverseWords1
                 sb.append(' ');
                 sb.append(str.substring(startIndex+1,endIndex+1));
             }
-
-
         }
         return sb.toString();
     }

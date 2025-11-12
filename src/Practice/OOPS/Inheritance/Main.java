@@ -4,7 +4,8 @@ public class Main
 {
     public static void main(String[] args)
     {
-//        Box box=new Box();
+          Box box=new Box();
+          box.greeting();
 //
 //        Box box1=new Box(4);
 //
@@ -33,7 +34,7 @@ public class Main
 
         //BoxWeight boxW=new Box(1,2,3);
 
-        BoxPrice boxP=new BoxPrice();
+//        BoxPrice boxP=new BoxPrice();
 //        System.out.println(boxP.price);
 //        System.out.println(boxP.weight);
 //        System.out.println(boxP.length + " " +boxP.width + " " +boxP.height);

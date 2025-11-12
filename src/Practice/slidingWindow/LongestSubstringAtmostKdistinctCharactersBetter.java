@@ -2,7 +2,7 @@ package Practice.slidingWindow;
 
 import java.util.HashMap;
 
-public class LongestSubstringAtmostKdistinctCharacters
+public class LongestSubstringAtmostKdistinctCharactersBetter
 {
     public static void main(String[] args)
     {

@@ -9,8 +9,10 @@ public class StringFunctions
         Scanner obj=new Scanner(System.in);
         System.out.println("Enter a line");
         String line=obj.nextLine();
+
         System.out.println("Enter a word");
         String word=obj.next();
+
         System.out.println("line is"+line);
         System.out.println("word is"+word);
 

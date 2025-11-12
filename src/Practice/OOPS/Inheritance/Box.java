@@ -1,6 +1,6 @@
 package Practice.OOPS.Inheritance;
 
-public class Box
+public  class Box
 {
     double length;
     double width;
@@ -19,6 +19,12 @@ public class Box
         this.height=-1;
         this.weight=-1;
     }
+
+    static void greeting()
+    {
+        System.out.println("Greeting method of box");
+    }
+
 
     //Cube
     Box(double side)
