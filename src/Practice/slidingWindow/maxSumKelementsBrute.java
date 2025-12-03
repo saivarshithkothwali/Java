@@ -20,13 +20,15 @@ public class maxSumKelementsBrute
             sum=0;
             for(int j=i;j<arr.length;j++)
             {
-                if(j-i+1<=k)
+                sum=sum+arr[j];
+
+                if(j-i+1==k)
                 {
-                    sum=sum+arr[j];
+
                     maxSum=Math.max(sum,maxSum);
-                }
-                else
                     break;
+                }
+
 
             }
         }

@@ -22,7 +22,7 @@ public class maxSumKelementsOptimal1
         int l=0;
         int r=k-1;
 
-        while(r<=arr.length-2)
+        while(r<arr.length)
         {
             sum=sum-arr[l];
             l++;

@@ -1,5 +1,6 @@
 package Practice.OOPS.Encapsulation;
 
+
 public class Encapsulation
 {
 

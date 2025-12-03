@@ -16,6 +16,7 @@ public class LeftRotateByD
         reverse(arr,0,n-1);
 
         System.out.println(Arrays.toString(arr));
+
     }
 
     public static void reverse(int[] arr,int s,int e)

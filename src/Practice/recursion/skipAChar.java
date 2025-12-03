@@ -9,16 +9,14 @@ public class skipAChar
     }
     public static String skip(String str)
     {
-        StringBuilder sb= new StringBuilder();
+        String ans="";
         for(int i=0;i<str.length();i++)
         {
-            char ch=str.charAt(i);
-
-            if(ch!='a')
+            if(str.charAt(i)!='a')
             {
-                sb.append(ch);
+                ans=ans+str.charAt(i);
             }
         }
-        return sb.toString();
+        return ans;
     }
 }
