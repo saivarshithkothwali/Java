@@ -12,13 +12,15 @@ public class skipAStringIfNotRequired
             return "";
         }
 
+        char ch=s.charAt(0);
+
         if(s.startsWith(remove) && !s.startsWith(not))
         {
             return skip(s.substring(remove.length()),remove,not);
         }
         else
         {
-            return s.charAt(0)+skip(s.substring(1),remove,not);
+            return ch+skip(s.substring(1),remove,not);
         }
     }
 }

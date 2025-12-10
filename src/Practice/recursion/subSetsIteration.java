@@ -9,6 +9,12 @@ public class subSetsIteration
     {
         int[] nums={1,2,3};
         System.out.println(subsets(nums));
+
+        List<List<Integer>> ans=subsets(nums);
+        for(List<Integer> list:ans)
+        {
+            System.out.println(list);
+        }
     }
     public static List<List<Integer>> subsets(int[] nums)
     {
