@@ -35,9 +35,12 @@ public class subSetsIterationDuplicates
                 List<Integer> inner=new ArrayList<>(outer.get(j));
                 inner.add(nums[i]);
                 outer.add(inner);
+
             }
 
         }
         return outer;
     }
 }
+
+
