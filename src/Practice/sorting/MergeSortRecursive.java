@@ -2,44 +2,44 @@ package Practice.sorting;
 
 import java.util.Arrays;
 
-public class MergeSort {
-    public static void main(String[] args)
-    {
-        int[] arr = {5, 4, 3, 2, 1};
-        System.out.println(Arrays.toString(recursive(arr)));
-
+public class MergeSortRecursive
+{
+    public static void main(String[] args) {
+        int[] arr={8,8,3,4,12,5,5,5,6,99};
+        System.out.println(Arrays.toString(divide(arr)));
     }
-    public static int[] recursive(int[] arr)
+    public static int[] divide(int[] arr)
     {
         if(arr.length==1)
         {
             return arr;
         }
+
         int mid=arr.length/2;
-        int[] left=recursive(Arrays.copyOfRange(arr,0,mid));
-        int[] right=recursive(Arrays.copyOfRange(arr,mid,arr.length));
+
+        int[] left= divide(Arrays.copyOfRange(arr,0,mid));
+        int[] right=divide(Arrays.copyOfRange(arr,mid,arr.length));
 
         return merge(left,right);
     }
-
     public static int[] merge(int[] first,int[] second)
     {
         int[] mix=new int[first.length+second.length];
+        int i=0;
+        int j=0;
+        int k=0;
 
-        int i=0,j=0,k=0;
         while(i<first.length && j<second.length)
         {
-            if(first[i]<second[i])
+            if(first[i]<second[j])
             {
                 mix[k]=first[i];
                 i++;
-
             }
             else
             {
                 mix[k]=second[j];
                 j++;
-
             }
             k++;
         }
@@ -50,14 +50,14 @@ public class MergeSort {
             i++;
             k++;
         }
+
         while(j<second.length)
         {
             mix[k]=second[j];
             j++;
             k++;
         }
+
         return mix;
     }
 }
-
-
