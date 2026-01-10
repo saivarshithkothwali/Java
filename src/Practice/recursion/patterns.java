@@ -5,7 +5,7 @@ public class patterns
     public static void main(String[] args)
     {
         int n=3;
-        pattern6(0,0,n);
+        pattern(4,0);
     }
     public static void pattern1(int i,int j,int n)
     {
@@ -68,6 +68,25 @@ public class patterns
             pattern6(i+1,0,n);
             System.out.println();
 
+        }
+    }
+
+    public static void pattern(int r,int c)
+    {
+        if(r==0)
+        {
+            return;
+        }
+
+        if(r>c)
+        {
+            System.out.print("*");
+            pattern(r,c+1);
+        }
+        else
+        {
+            System.out.println();
+            pattern(r-1,0);
         }
     }
 }
