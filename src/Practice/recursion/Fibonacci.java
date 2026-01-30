@@ -10,6 +10,11 @@ public class Fibonacci
     {
         if(n<2)
             return n;
-        return fib(n-1)+fib(n-2);
+
+        int left=fib(n-1);
+        int right=fib(n-2);
+        int sum=left+right;
+
+        return sum;
     }
 }
