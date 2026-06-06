@@ -4,26 +4,27 @@ public class LongestCommonPrefix
 {
     public static void main(String[] args)
     {
-        String[] strs={"flower"};
-        System.out.println(prefix(strs));
+        String[] str={"flower","flow","flowht"};
+        System.out.println(prefix(str));
 
     }
-    public static String prefix(String[] strs)
+    public static String prefix(String[] str)
     {
-        StringBuilder ans= new StringBuilder();
+        String op="";
 
-        for(int i=0;i<strs[0].length();i++)
+        for(int i=0;i<str[0].length();i++)
         {
-            char currentChar=strs[0].charAt(i);
-            for(int j=1;j<strs.length;j++)
+            char ch=str[0].charAt(i);
+            for(int j=1;j<str.length;j++)
             {
-                if(i>=strs[j].length() || currentChar!=strs[j].charAt(i))
+
+                if(i>=str[j].length() || ch!=str[j].charAt(i))
                 {
-                    return ans.toString();
+                    return op;
                 }
             }
-            ans.append(currentChar);
+            op=op+ch;
         }
-        return ans.toString();
+        return op;
     }
 }

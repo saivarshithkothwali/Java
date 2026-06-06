@@ -1,41 +1,49 @@
 package Practice.Strings;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ReverseWordsString3
 {
     public static void main(String[] args)
     {
-        Scanner sc=new Scanner(System.in);
+        //Scanner sc=new Scanner(System.in);
 
-        String str=sc.nextLine();
+        String str="sai varshith";
         System.out.println(reverse(str));
     }
     public static String reverse(String str)
     {
         char[] arr=str.toCharArray();
 
-        int SI=0;
+        //System.out.println(Arrays.toString(arr));
 
-        for(int EI=0;EI<=arr.length;EI++)
+        int s=0,e=0;
+
+        while(e<=arr.length)
         {
-            if(EI==arr.length || arr[EI]==' ')
+            while(e<arr.length && arr[e]!=' ' )
             {
-                rev(SI,EI-1,arr);
-                SI=EI+1;
+                e++;
             }
+            swap(arr,s,e-1);
+
+            s=e+1;
+            e=s;
         }
+
         return new String(arr);
+
     }
-    public static void rev(int SI,int EI,char[] arr)
+    public static void swap(char[] arr,int first,int last)
     {
-        while(SI<EI)
+        while(first<=last)
         {
-            char temp=arr[SI];
-            arr[SI]=arr[EI];
-            arr[EI]=temp;
-            SI++;
-            EI--;
+            char temp=arr[first];
+            arr[first]=arr[last];
+            arr[last]=temp;
+            first++;
+            last--;
         }
 
     }

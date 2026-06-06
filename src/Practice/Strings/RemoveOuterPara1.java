@@ -8,32 +8,38 @@ public class RemoveOuterPara1
     }
     public static String remove(String str)
     {
-        StringBuilder sb=new StringBuilder();
         int count=0;
-        for(int i=0;i<str.length();i++)
+        StringBuilder sb=new StringBuilder();
+
+        for(char ch:str.toCharArray())
         {
-            char ch=str.charAt(i);
             if(ch=='(')
             {
-                if(count!=0)
+                if(count==0)
                 {
-                    sb.append(ch);
+
                     count++;
                 }
                 else
                 {
                     count++;
+                    sb.append(ch);
                 }
             }
             else
             {
                 count--;
-                if(count!=0)
+
+                if(count==0)
+                {
+                    continue;
+                }
+                else
                 {
                     sb.append(ch);
-                    count--;
                 }
             }
+
         }
         return sb.toString();
     }

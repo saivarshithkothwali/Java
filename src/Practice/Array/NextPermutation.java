@@ -6,7 +6,7 @@ public class NextPermutation
 {
     public static void main(String[] args)
     {
-        int[] arr={2,1,5,4,3,0,0};
+        int[] arr={5,4,3,2,1,0};
         System.out.println(Arrays.toString(next(arr)));
 
     }
@@ -20,30 +20,38 @@ public class NextPermutation
             {
                 index=i;
                 break;
+
             }
         }
+
         if(index==-1)
         {
-              rev(arr,0,arr.length-1);
-              return arr;
+            rev(arr,0,arr.length-1);
+            return arr;
         }
 
-        for(int i=arr.length-1;i>=index;i--)
+        for(int i=arr.length-1;i>index;i--)
         {
             if(arr[i]>arr[index])
             {
-                swap(arr,i,index);
+                swapEl(arr,index,i);
                 break;
             }
         }
-         rev(arr,index+1,arr.length-1);
 
+        rev(arr,index+1,arr.length-1);
         return arr;
-
     }
+
+    public static void swapEl(int[] arr,int index,int i)
+    {
+        int temp=arr[i];
+        arr[i]=arr[index];
+        arr[index]=temp;
+    }
+
     public static void rev(int[] arr,int s,int e)
     {
-
         while(s<=e)
         {
             int temp=arr[s];
@@ -52,11 +60,5 @@ public class NextPermutation
             s++;
             e--;
         }
-    }
-    public static void swap(int[] arr,int i,int index)
-    {
-        int temp=arr[i];
-        arr[i]=arr[index];
-        arr[index]=temp;
     }
 }

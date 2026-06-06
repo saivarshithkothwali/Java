@@ -1,37 +1,52 @@
 package Practice.Array;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MaxSumArrayReturnArrayOptimal
 {
-    public static void main(String[] args) {
-        int[] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
-        sum(arr);
-    }
-    public static void sum(int[] arr)
+    public static void main(String[] args)
     {
-        int sum=0;
+        int[] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
+        System.out.println(sum(arr));
+    }
+    public static ArrayList<Integer> sum(int[] arr)
+    {
+        int sum=arr[0];
+        int maxSum=arr[0];
+
         int start=0;
-        int sIndex=-1;
-        int eIndex=-1;
-        int maxSum=Integer.MIN_VALUE;
-        for(int i=0;i<arr.length;i++)
+        int ansStart=0;
+        int ansEnd=0;
+
+        for(int i=1;i<arr.length;i++)
         {
-            if(sum==0)
+            if(arr[i]>sum+arr[i])
+            {
                 start=i;
-            sum=sum+arr[i];
+
+                sum=arr[i];
+            }
+            else
+            {
+                sum=sum+arr[i];
+            }
             if(sum>maxSum)
             {
                 maxSum=sum;
-                sIndex=start;
-                eIndex=i;
+                ansStart=start;
+                ansEnd=i;
             }
-            if(sum<0)
-                sum=0;
         }
-        System.out.println("maxSum=" +maxSum);
+        ArrayList<Integer> list=new ArrayList<>();
 
-        for(int i=sIndex;i<=eIndex;i++)
+        for(int i=ansStart;i<=ansEnd;i++)
         {
-            System.out.print(arr[i]+" ");
+            list.add(arr[i]);
         }
+        return list;
+
+
     }
 }

@@ -15,7 +15,7 @@ public class FirstAndLastOccuranceBrute
     public static List<Integer> occurance(int[] arr,int target)
     {
         int first=-1,last=-1;
-        //List<Integer> list=new ArrayList<>();
+        List<Integer> list=new ArrayList<>();
         for(int i=0;i<arr.length;i++)
         {
             if(arr[i]==target)
@@ -27,8 +27,15 @@ public class FirstAndLastOccuranceBrute
                 last=i;
             }
         }
-        //list.add();
-        //list.addAll();
-        return new ArrayList<>(Arrays.asList(first,last));
+
+        //return new ArrayList<>(Arrays.asList(first,last));
+
+//        list.add(first);
+//        list.add(last);
+
+        return new ArrayList<>(List.of(first,last));
+
+
+        //return list;
     }
 }

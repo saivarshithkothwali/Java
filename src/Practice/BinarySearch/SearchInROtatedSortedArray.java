@@ -26,14 +26,20 @@ public class SearchInROtatedSortedArray
     public static int search(int[] arr,int target)
     {
         int s=0,e=arr.length-1;
+
         while(s<=e)
         {
             int mid=s+(e-s)/2;
+
             if(arr[mid]==target)
-                return mid;
-            if(arr[s]<=arr[mid])
             {
-                if(arr[s]<=target && target<=arr[mid])
+                return mid;
+
+            }
+
+            else if(arr[s]<=arr[mid])
+            {
+                if(arr[s]<=target && target<arr[mid])
                 {
                     e=mid-1;
                 }
@@ -44,11 +50,12 @@ public class SearchInROtatedSortedArray
             }
             else
             {
-                if(arr[mid]<=target && target<=arr[e])
+                if(arr[mid]<target && target<=arr[e])
                 {
                     s=mid+1;
                 }
-                else {
+                else
+                {
                     e=mid-1;
                 }
             }

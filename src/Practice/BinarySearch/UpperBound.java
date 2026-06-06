@@ -8,15 +8,16 @@ public class UpperBound
     }
     public static int upper(int[] arr,int x)
     {
-        int s=0;
-        int e=arr.length-1;
-        int ans=arr.length;
+        int s=0,e=arr.length-1;
+
+        int ub=arr.length;
         while(s<=e)
         {
             int mid=s+(e-s)/2;
+
             if(arr[mid]>x)
             {
-                ans=mid;
+                ub=mid;
                 e=mid-1;
             }
             else
@@ -24,6 +25,6 @@ public class UpperBound
                 s=mid+1;
             }
         }
-        return ans;
+        return ub;
     }
 }

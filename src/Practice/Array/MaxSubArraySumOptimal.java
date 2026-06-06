@@ -8,23 +8,14 @@ public class MaxSubArraySumOptimal
     }
     public static int sum(int[] arr)
     {
-        int maxSum=Integer.MIN_VALUE;
-        int sum=0;
+        int sum=arr[0];
+        int maxSum=arr[0];
 
-        for(int i=0;i<arr.length;i++)
+        for(int i=1;i<arr.length;i++)
         {
 
-
-            sum=sum+arr[i];
-            if(sum>maxSum)
-            {
-                maxSum=sum;
-
-            }
-            if(sum<0)
-            {
-                sum=0;
-            }
+            sum=Math.max(arr[i],sum+arr[i]);
+            maxSum=Math.max(sum,maxSum);
         }
         return maxSum;
     }

@@ -11,6 +11,7 @@ public class FirstAndLAstOccuranceBrute1
     public static int[] occurance(int[] arr,int target)
     {
         int first=-1,last=-1;
+
         for(int i=0;i<arr.length;i++)
         {
             if(arr[i]==target)
@@ -18,9 +19,15 @@ public class FirstAndLAstOccuranceBrute1
                 if(first==-1)
                 {
                     first=i;
+                    last=i;
                 }
-                last=i;
+                else
+                {
+                    last=i;
+                }
+
             }
+
         }
         return new int[] {first,last};
     }
